@@ -19,4 +19,4 @@ tasks:
     desc: ビルドしてパスの通った場所にインストールする
     deps: [build] # 実行前にbuildタスクに依存
     cmds:
-      - mv i3s ~/.local/bin/
+      - go install .
