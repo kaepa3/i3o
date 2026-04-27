@@ -1,0 +1,22 @@
+version: "3"
+
+tasks:
+  default:
+    cmds:
+      - task: build
+
+  test:
+    desc: テストを実行する
+    cmds:
+      - go test -v ./...
+
+  build:
+    desc: CLIツールをビルドする
+    cmds:
+      - go build -o i3o.exe main.go
+
+  install:
+    desc: ビルドしてパスの通った場所にインストールする
+    deps: [build] # 実行前にbuildタスクに依存
+    cmds:
+      - mv i3s ~/.local/bin/
